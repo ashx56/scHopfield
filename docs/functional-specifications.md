@@ -25,7 +25,7 @@ Computational biologists, bioinformaticians, and research scientists working in 
 
 ### Use Case 2: Simulate Differentiation Process between Cell Types and Identify Key Genes
 
-- **Objective**: The user wants to simulate the differentiation process from one annotated cell type (e.g., progenitor) to another (e.g., mature cell type) and identify genes that vary most significantly along this trajectory. This will assist users in developing or refining differentiation protocols by highlighting target genes that are dynamically regulated during the transition.
+- **Objective**: The user wants to simulate the differentiation process from one annotated cell type (e.g., progenitor) to another (e.g., mature cell type) and identify genes that vary most significantly along this trajectory. This will assist users in developing or refining in vitro differentiation protocols by highlighting target genes that are dynamically regulated during the transition.
 
 - **User-System Interaction**:
   1. The user inputs an scRNAseq count matrix and selects the starting and ending cell types for differentiation.
