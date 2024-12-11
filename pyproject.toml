@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "HopfieldModel"
-version = "1.0.0"
+version = "1.0.1"
 description = "A Python package to model single-cell data using Hopfield networks"
 authors = [
     {name = "Ashish Phal", email = "aphal@uw.edu"},
