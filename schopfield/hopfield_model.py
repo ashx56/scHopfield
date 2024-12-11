@@ -28,6 +28,8 @@ class HopfieldModel:
         """
         Perform Z-score normalization on the input data.
         """
+        if self.data.size == 0:
+            raise ValueError("Input data is empty. Cannot normalize.")
         scaler = StandardScaler()
         self.normalized_data = scaler.fit_transform(self.data)
 
@@ -41,15 +43,27 @@ class HopfieldModel:
         Returns:
         numpy.ndarray: A reduced dataset containing only the highly variable genes.
         """
+        if self.normalized_data is None or self.normalized_data.size == 0:
+            raise ValueError("Normalized data is empty. Cannot select highly variable genes.")
+
         variances = np.var(self.normalized_data, axis=0)
+        if not np.any(variances > 0):
+            raise ValueError("All genes have zero variance. Cannot select highly variable genes.")
+
         cutoff = np.percentile(variances, 100 - top_percent)
         self.hvgs = self.normalized_data[:, variances >= cutoff]
+        if self.hvgs.shape[1] == 0:
+            raise ValueError("No highly variable genes found with the given threshold.")
+
         self.selected_genes = np.array(self.gene_names)[variances >= cutoff]
 
     def construct_weight_matrices(self):
         """
         Construct a Hopfield network weight matrix for each cell.
         """
+        if self.hvgs is None or self.hvgs.size == 0:
+            raise ValueError("Highly variable genes are not selected. Cannot construct weight matrices.")
+
         n_cells, n_genes = self.hvgs.shape
         self.weight_matrices = []
 
@@ -71,6 +85,9 @@ class HopfieldModel:
         Returns:
         float: The energy of the cell.
         """
+        if self.weight_matrices is None or len(self.weight_matrices) == 0:
+            raise ValueError("Weight matrices are not constructed. Cannot compute Hopfield energy.")
+            
         weight_matrix = self.weight_matrices[cell_index]
         state = (self.hvgs[cell_index] > 0).astype(int)  # Use reduced dataset
         energy = -0.5 * np.sum(weight_matrix * np.outer(state, state))

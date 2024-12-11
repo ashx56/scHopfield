@@ -50,7 +50,7 @@ class TestHopfieldModel(unittest.TestCase):
         self.model.select_highly_variable_genes(top_percent=10)
         self.model.construct_weight_matrices()
         # Ensure it runs without error
-        self.model.plot_transition_energy("0", "1")
+        model.plot_transition_energy("B cells", "NK cells")
 
     def test_plot_gene_transition_matrix(self):
         """Test the gene transition matrix plotting function."""
