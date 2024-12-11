@@ -38,3 +38,25 @@ To install the package, run the following command:
 
 ```bash
 pip install HopfieldModel
+
+## Example Visualizations
+
+### 1. Transition Energy Plot
+This plot shows the transition of cells between two specified types along PC1, with their Hopfield energy.
+
+![Transition Energy Plot](docs/images/transition_energy_plot.png)
+
+---
+
+### 2. PCA Visualization
+Cells are projected into PCA space, with each point colored by its Hopfield energy.
+
+![PCA Plot](docs/images/pca_plot.png)
+
+---
+
+### 3. Gene Transition Matrix
+This heatmap displays the gene state changes between two cell types, clustered hierarchically.
+
+![Gene Transition Matrix](docs/images/gene_transition_matrix.png)
+
