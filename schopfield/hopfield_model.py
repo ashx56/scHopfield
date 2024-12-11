@@ -14,7 +14,7 @@ class HopfieldModel:
         Initialize the Hopfield network with the gene expression data.
 
         Parameters:
-        data (numpy.ndarray): A 2D array where rows represent cells and columns represent gene expression levels.
+        data (numpy.ndarray): A 2D array where rows represent cells and columns represent gene expression counts.
         cell_types (numpy.ndarray): Array of cell type labels for each cell.
         """
         self.data = data
@@ -30,6 +30,7 @@ class HopfieldModel:
         """
         if self.data.size == 0:
             raise ValueError("Input data is empty. Cannot normalize.")
+            
         scaler = StandardScaler()
         self.normalized_data = scaler.fit_transform(self.data)
 
