@@ -76,7 +76,7 @@ class HopfieldModel:
         energy = -0.5 * np.sum(weight_matrix * np.outer(state, state))
         return energy
 
-    def plot_grouped_energies(self):
+    def plot_grouped_energies(self, save_path="grouped_energies.png"):
         """
         Plot the average Hopfield energy grouped by cell types as a boxplot.
         """
@@ -93,10 +93,11 @@ class HopfieldModel:
         plt.xlabel("Cell Types")
         plt.ylabel("Hopfield Energy")
         plt.title("Hopfield Energy by Cell Type")
+        plt.savefig(save_path)
         plt.show()
 
 
-    def plot_energy_pca(self):
+    def plot_energy_pca(self, save_path="energy_pca.png"):
             """
             Plot cells in PCA space, colored by their Hopfield energy with distinct colors for each cell type.
             """
@@ -137,9 +138,10 @@ class HopfieldModel:
             plt.title("PCA of Cells Colored by Hopfield Energy")
             plt.legend(title="Cell Types")
             plt.colorbar(label="Normalized Energy")
+            plt.savefig(save_path)
             plt.show()
 
-    def plot_transition_energy(self, cell_type_1, cell_type_2):
+    def plot_transition_energy(self, cell_type_1, cell_type_2, save_path="transition_energy.png"):
         """
         Plot cells along PC1 with their Hopfield energy for two specified cell types.
 
@@ -178,9 +180,10 @@ class HopfieldModel:
         plt.ylabel("Hopfield Energy")
         plt.title(f"Transition from {cell_type_1} to {cell_type_2}")
         plt.legend()
+        plt.savefig(save_path)
         plt.show()
 
-    def plot_gene_transition_matrix(self, cell_type_1, cell_type_2):
+    def plot_gene_transition_matrix(self, cell_type_1, cell_type_2, save_path="gene_transition_matrix.png"):
         """
         Plot a gene transition matrix showing state changes between two cell types.
 
@@ -219,6 +222,7 @@ class HopfieldModel:
         plt.title("Gene Transition Matrix")
         plt.xlabel("Genes")
         plt.ylabel("Cell Types")
+        plt.savefig(save_path)
         plt.show()
 
         return top_genes_1, top_genes_2
