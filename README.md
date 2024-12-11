@@ -38,6 +38,7 @@ To install the package, run the following command:
 
 ```bash
 pip install HopfieldModel
+```
 
 ## Example Visualizations
 
