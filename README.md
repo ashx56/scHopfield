@@ -1,6 +1,6 @@
 # HopfieldModel
 
-**Author**: [Your Name]
+**Author**: Ashish Phal
 
 **BIOEN537: Computational Systems Biology. University of Washington, Seattle.**
 
