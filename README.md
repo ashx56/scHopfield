@@ -44,19 +44,27 @@ pip install HopfieldModel
 ### 1. Transition Energy Plot
 This plot shows the transition of cells between two specified types along PC1, with their Hopfield energy.
 
-![Transition Energy Plot](docs/images/transition_energy_plot.png)
+![Transition Energy Plot](docs/trajectory.png)
 
 ---
 
 ### 2. PCA Visualization
-Cells are projected into PCA space, with each point colored by its Hopfield energy.
+Cells are projected into PCA space, with each point colored by its Hopfield energy. Different colors represent distinct cell types.
 
-![PCA Plot](docs/images/pca_plot.png)
+![PCA Plot](docs/energy_pca.png)
 
 ---
 
 ### 3. Gene Transition Matrix
-This heatmap displays the gene state changes between two cell types, clustered hierarchically.
+This heatmap displays the gene state changes between two cell types, clustered hierarchically. The clustering highlights key genes involved in the transition.
 
-![Gene Transition Matrix](docs/images/gene_transition_matrix.png)
+![Gene Transition Matrix](docs/gene_matrix.png)
+
+---
+
+### 4. Hopfield Energy Boxplot
+This boxplot shows the distribution of Hopfield energy across different cell types, enabling a comparison of differentiation potency.
+
+![Energy Boxplot](docs/boxplot.png)
+
 
